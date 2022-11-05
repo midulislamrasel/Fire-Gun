@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from '../Modal/Modal';
 import './SingelGun.css'
 
 const SingelGun = (props) => {
@@ -22,10 +23,12 @@ const SingelGun = (props) => {
                     <p>Price : {price}</p>
                     <div className="card-actions">
                         <button onClick={()=>countAdd()} className="btn btn-sm btn-info">Add to Card</button>
-                        <button className="btn btn-sm btn-primary">Details</button>
+                        {/* <button className="btn btn-sm btn-primary">Details</button> */}
+                        <label htmlFor="my-modal-3" className="btn btn-sm btn-primary">Details</label>
                     </div>
                 </div>
             </div>
+            <Modal></Modal>
         </div>
     );
 };
