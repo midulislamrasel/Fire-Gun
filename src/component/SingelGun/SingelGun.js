@@ -2,12 +2,14 @@ import React from 'react';
 import './SingelGun.css'
 
 const SingelGun = (props) => {
-    const { id, name, img, bullet, capacity, action, price, category } = props.gun;
+    const {countAdd,gun} = props;
+
+    const { id, name, img, bullet, capacity, action, price, category } = gun;
     
     return (
         <div>
-            <div className="card w-96 bg-base-100 shadow-xl">
-            <figure><img src={img} alt="Shoes" /></figure>
+            <div className="card w-full h-full bg-base-100 shadow-xl">
+            <figure><img className='w-80 h-80' src={img} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">
                     {name}
@@ -18,9 +20,9 @@ const SingelGun = (props) => {
                     <p>Action : {action}</p>
                     <p>Category : {category}</p>
                     <p>Price : {price}</p>
-                    <div className="card-actions justify-end">
-                    <div className="badge badge-outline">Fashion</div> 
-                    <div className="badge badge-outline">Products</div>
+                    <div className="card-actions">
+                        <button onClick={()=>countAdd()} className="btn btn-sm btn-info">Add to Card</button>
+                        <button className="btn btn-sm btn-primary">Details</button>
                     </div>
                 </div>
             </div>
